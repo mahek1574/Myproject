@@ -79,7 +79,6 @@ export default function About() {
   return (
     <div className="bg-[#FAFCFB] text-[#17221B] pt-24 pb-20 overflow-hidden font-sans">
       
-      
       <style>{`
         @keyframes spinSlow {
           from { transform: rotate(0deg); }
@@ -113,7 +112,6 @@ export default function About() {
               </span>
             </motion.div>
 
-        
             <motion.h1 
               variants={itemVariants}
               className="mt-6 text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.15] text-[#17221B]"
@@ -150,20 +148,17 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-        
+          {/* Further reduced wrapper dimensions to safely fit within smaller viewports without clipping */}
           <div className="w-full lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0">
-            <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] flex items-center justify-center">
+            <div className="relative w-[230px] h-[230px] sm:w-[280px] sm:h-[280px] lg:w-[330px] lg:h-[330px] flex items-center justify-center">
               
-          
               <div className="absolute inset-0 bg-[#6B8F7B]/20 rounded-full blur-3xl pointer-events-none" />
 
-          
-              <div className="absolute inset-[-30px] sm:inset-[-40px] rounded-full border-2 border-dashed border-[#6B8F7B]/60 pointer-events-none animate-spin-slow" />
+              <div className="absolute inset-[-20px] sm:inset-[-30px] rounded-full border-2 border-dashed border-[#6B8F7B]/60 pointer-events-none animate-spin-slow" />
 
-                        <div className="absolute inset-0 rounded-full border border-solid border-[#6B8F7B]/40 pointer-events-none animate-spin-reverse bg-gradient-to-tr from-transparent via-[#6B8F7B]/10 to-transparent shadow-[0_0_30px_rgba(107,143,123,0.25)]" />
+              <div className="absolute inset-0 rounded-full border border-solid border-[#6B8F7B]/40 pointer-events-none animate-spin-reverse bg-gradient-to-tr from-transparent via-[#6B8F7B]/10 to-transparent shadow-[0_0_30px_rgba(107,143,123,0.25)]" />
 
-          
-              <div className="relative z-10 w-full h-full flex justify-center items-center hover:scale-[1.03] transition-transform duration-500 ease-out cursor-default">
+              <div className="relative z-10 w-full h-full flex justify-center items-center hover:scale-[1.03] transition-transform duration-500 ease-out cursor-default p-3">
                 <img
                   src={Monk}
                   alt="Mindful Strategy Artwork"
@@ -171,28 +166,26 @@ export default function About() {
                 />
               </div>
 
-          
               <motion.div
                 animate={{ y: [0, -7, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.1 }}
-                className="absolute -top-4 -left-4 sm:-left-8 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full border border-gray-100 shadow-xl flex items-center gap-2"
+                className="absolute -top-2 -left-2 sm:-left-4 z-20 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full border border-gray-100 shadow-xl flex items-center gap-1.5"
               >
-                <div className="w-6 h-6 rounded-full bg-[#6B8F7B] flex items-center justify-center text-white">
-                  <Sparkles size={12} />
+                <div className="w-4 h-4 rounded-full bg-[#6B8F7B] flex items-center justify-center text-white">
+                  <Sparkles size={9} />
                 </div>
-                <span className="text-xs font-bold text-[#17221B]">Zen Focus</span>
+                <span className="text-[10px] font-bold text-[#17221B]">Zen Focus</span>
               </motion.div>
 
-          
               <motion.div
                 animate={{ y: [0, 7, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-4 -right-4 sm:-right-8 z-20 bg-[#17221B] text-white px-4 py-2 rounded-full border border-white/10 shadow-xl flex items-center gap-2"
+                className="absolute -bottom-2 -right-2 sm:-right-4 z-20 bg-[#17221B] text-white px-3 py-1 rounded-full border border-white/10 shadow-xl flex items-center gap-1.5"
               >
-                <div className="w-5 h-5 rounded-full bg-[#6B8F7B]/30 flex items-center justify-center text-[#6B8F7B]">
-                  <Zap size={12} />
+                <div className="w-3.5 h-3.5 rounded-full bg-[#6B8F7B]/30 flex items-center justify-center text-[#6B8F7B]">
+                  <Zap size={9} />
                 </div>
-                <span className="text-xs font-medium tracking-wide">Clarity First</span>
+                <span className="text-[10px] font-medium tracking-wide">Clarity First</span>
               </motion.div>
 
             </div>

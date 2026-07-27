@@ -55,7 +55,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-10">
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-center">
           
-  
+          {/* LEFT CONTENT */}
           <motion.div 
             variants={containerVariants}
             initial="hidden"
@@ -140,20 +140,25 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-      
+          {/* RIGHT ILLUSTRATION - EXTENDED 420PX SIZE FROM 830PX UP TO 960PX */}
           <div className="w-full lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0">
-            <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] flex items-center justify-center">
+            {/* 
+              - Default size is compact for smaller mobile phones.
+              - max-[390px] preserves your custom iPhone configuration.
+              - min-[830px]:max-[960px] applies the exact large 420px size across the entire range from 830px up to 960px.
+            */}
+            <div className="relative w-[320px] h-[320px] max-[390px]:w-[260px] max-[390px]:h-[260px] min-[830px]:max-[960px]:w-[420px] min-[830px]:max-[960px]:h-[420px] xl:w-[380px] xl:h-[380px] flex items-center justify-center">
               
-    
+              {/* Background Ambient Glows */}
               <div className="absolute inset-0 bg-[#6B8F7B]/20 rounded-full blur-3xl pointer-events-none" />
 
-              
-              <div className="absolute inset-[-30px] sm:inset-[-40px] rounded-full border-2 border-dashed border-[#6B8F7B]/60 pointer-events-none animate-spin-slow" />
+              {/* Outer Rotating Dashed Ring */}
+              <div className="absolute inset-[-28px] max-[390px]:inset-[-20px] min-[830px]:max-[960px]:inset-[-42px] xl:inset-[-40px] rounded-full border-2 border-dashed border-[#6B8F7B]/60 pointer-events-none animate-spin-slow" />
 
-            
+              {/* Inner Reverse Rotating Ring */}
               <div className="absolute inset-0 rounded-full border border-solid border-[#6B8F7B]/40 pointer-events-none animate-spin-reverse bg-gradient-to-tr from-transparent via-[#6B8F7B]/10 to-transparent shadow-[0_0_30px_rgba(107,143,123,0.25)]" />
 
-          
+              {/* Monk Graphic */}
               <div className="relative z-10 w-full h-full flex justify-center items-center">
                 <img
                   src={Monk}
@@ -162,11 +167,11 @@ const Hero = () => {
                 />
               </div>
 
-            
+              {/* Floating Badge 1 */}
               <motion.div
                 animate={{ y: [0, -7, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.1 }}
-                className="absolute -top-4 -left-4 sm:-left-8 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full border border-gray-100 shadow-xl flex items-center gap-2"
+                className="absolute -top-4 -left-2 max-[390px]:-left-4 min-[830px]:max-[960px]:-left-8 xl:-left-8 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full border border-gray-100 shadow-xl flex items-center gap-2"
               >
                 <div className="w-6 h-6 rounded-full bg-[#6B8F7B] flex items-center justify-center text-white">
                   <Sparkles size={12} />
@@ -174,11 +179,11 @@ const Hero = () => {
                 <span className="text-xs font-bold text-[#17221B]">Zen Focus</span>
               </motion.div>
 
-            
+              {/* Floating Badge 2 */}
               <motion.div
                 animate={{ y: [0, 7, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-4 -right-4 sm:-right-8 z-20 bg-[#17221B] text-white px-4 py-2 rounded-full border border-white/10 shadow-xl flex items-center gap-2"
+                className="absolute -bottom-4 -right-2 max-[390px]:-right-4 min-[830px]:max-[960px]:-right-8 xl:-right-8 z-20 bg-[#17221B] text-white px-4 py-2 rounded-full border border-white/10 shadow-xl flex items-center gap-2"
               >
                 <div className="w-5 h-5 rounded-full bg-[#6B8F7B]/30 flex items-center justify-center text-[#6B8F7B]">
                   <Zap size={12} />
@@ -193,6 +198,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+}; 
 
 export default Hero;

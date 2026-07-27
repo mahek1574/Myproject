@@ -32,7 +32,8 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Logo"
-              className="h-8 sm:h-12 lg:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              /* Increased logo size further for mobile and tablet views where the toggle is active */
+              className="h-12 sm:h-14 lg:h-14 min-[901px]:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
             />
           </Link>
 
@@ -200,7 +201,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-  
+ 
           <div className="flex min-[901px]:hidden items-center gap-2">
             <button
               className="relative z-50 p-2 rounded-full text-[#17221B] hover:bg-[#BCCFC4]/40 transition-colors cursor-pointer"
